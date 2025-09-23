@@ -102,61 +102,66 @@
 
     <!-- main view -->
     <div class="p-20 sm:ml-5">
-
-
-        <div class="text-xl gap-4 flex flex-row">
-            <div class="w-1/2 justify-center items-center align-center">
-                <p>Vui Lòng chọn Mảng để tiếp tục!</p>
-            </div>
-            <div class="w-full w-1/4 ">
-                <select class="w-50" name="taoArray" id="createArraySelect" onchange="taoMang()">
-                    <option value="">Tạo mảng</option>
-                    <option value="Mảng có sẵn">Mảng có sẵn</option>
-                    <option value="Tạo mảng mới">Tạo mảng mới</option>
-                </select>
-            </div>
-            <div class="w-1/3">
-                <p id="arrayA"></p>
-                <p id="arrayB"></p>
-                <input type="text">
-            </div>
-
-        </div>
-
         <div class="flex flex-col gap-4 pt-10">
+            <div class="flex">
+                <div class="w-1/3 justify-center items-center align-center">
+                    <p>Vui Lòng chọn Mảng để tiếp tục!</p>
+                </div>
+                <div class="w-1/4 ">
+                    <select class="w-50" name="taoArray" id="createArraySelect" onchange="taoMang()">
+                        <option value=""></option>
+                        <option value="Mảng có sẵn">Mảng có sẵn</option>
+                        <option value="Tạo mảng mới">Tạo mảng mới</option>
+                    </select>
+                </div>
+                <div class="w-1/3 ">
+                    <input id="arrayInput" class="hidden" type="text"
+                        placeholder="Vui lòng thêm mảng mới, cánh nhau dấu ',' vd: 1,2,3">
+                    <button id="btnAddArray" class=" hidden bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                        onclick="addArray()">xong</button>
+                </div>
+                <div class="w-1/3">
+                    <p class="" id="arrayInputShow"></p>
+
+                </div>
+            </div>
+            <hr>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">1. Tổng
+                <button id="tongsoduong" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">1. Tổng
                     các số dương trong mảng.</button>
                 <span id="kequa1"> </span>
 
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">2. Đếm có bao nhiêu
-                    số
-                    dương trong mảng.</button>
+                <button id="demsoduong" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">2. Đếm có
+                    bao nhiêu
+                    số dương trong mảng.</button>
                 <span id="kequa2"> </span>
 
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">3. Tìm số nhỏ nhất
+                <button id="timsonhonhat" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">3. Tìm số
+                    nhỏ nhất
                     trong mảng.</button>
                 <span id="kequa3"> </span>
 
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">4. Tìm số dương nhỏ
+                <button id="timsoduongmin" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">4. Tìm số
+                    dương nhỏ
                     nhất trong mảng.</button>
                 <span id="kequa4"> </span>
 
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">5. Tìm số chẵn cuối
+                <button id="timchancuoi" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">5. Tìm số
+                    chẵn cuối
                     cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1.</button>
                 <span id="kequa5"> </span>
 
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">6. Đổi chỗ 2 giá
+                <button id="doiso" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">6. Đổi chỗ 2 giá
                     trị
                     trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).</button>
                 <span id="kequa6"> </span>
@@ -164,28 +169,33 @@
             </div>
 
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">7. Sắp xếp mảng
+                <button id="tangdan" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">7. Sắp xếp mảng
                     theo
                     thứ tự tăng dần.</button>
                 <span id="kequa7"> </span>
 
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">8. Tìm số nguyên tố
+                <button id="songuyento" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">8. Tìm số
+                    nguyên tố
                     đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về – 1.
                 </button>
                 <span id="kequa8"> </span>
 
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">9. Nhập thêm 1 mảng
+                <button id="songuyen" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">9. Nhập thêm 1
+                    mảng
                     số
                     thực, tìm xem trong mảng có bao nhiêu số nguyên?</button>
                 <span id="kequa9"> </span>
+                <input class="w-100" type="text" placeholder="Vui lòng thêm mảng mới, cánh nhau dấu ',' vd: 1,2,3">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">xong</button>
 
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">10. So sánh số lượng
+                <button id="amduong" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">10. So sánh số
+                    lượng
                     số
                     dương và số lượng số âm xem số nào nhiều hơn.</button>
                 <span id="kequa10"> </span>
