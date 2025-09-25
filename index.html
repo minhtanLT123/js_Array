@@ -106,58 +106,63 @@
             <div class="flex">
                 <div class="w-1/3 justify-center items-center align-center">
                     <p>Vui Lòng chọn Mảng để tiếp tục!</p>
+                    <button class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded transition duration-300"
+                        onclick="location.reload()">Tải lại trang</button>
                 </div>
                 <div class="w-1/4 ">
                     <select class="w-50" name="taoArray" id="createArraySelect" onchange="taoMang()">
-                        <option value=""></option>
+                        <option value="">Chọn mảng</option>
                         <option value="Mảng có sẵn">Mảng có sẵn</option>
                         <option value="Tạo mảng mới">Tạo mảng mới</option>
                     </select>
                 </div>
-                <div class="w-1/3 ">
-                    <input id="arrayInput" class="hidden w-20" type="number">
+                <div class="w-1/3 hidden" id="divarrayInput">
+                    <input id="arrayInput" class=" w-20" type="number">
                     <button id="btnAddArray" type="text"
-                        class=" hidden bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                        class=" bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
                         onclick="addArray()">Thêm</button>
+                    <p>thêm từng số rồi nhấn nút Thêm</p>
                 </div>
                 <div class="w-1/3">
                     <p class="" id="arrayInputShow"></p>
 
                 </div>
+
             </div>
+
             <hr>
             <div>
                 <button id="tongsoduong" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">1. Tổng
                     các số dương trong mảng.</button>
-                <span id="kequa1"> </span>
+                <span class="text-2xl " id="kequa1"> </span>
 
             </div>
             <div>
                 <button id="demsoduong" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">2. Đếm có
                     bao nhiêu
                     số dương trong mảng.</button>
-                <span id="kequa2"> </span>
+                <span class="text-2xl " id="kequa2"> </span>
 
             </div>
             <div>
                 <button id="timsonhonhat" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">3. Tìm số
                     nhỏ nhất
                     trong mảng.</button>
-                <span id="kequa3"> </span>
+                <span class="text-2xl " id="kequa3"> </span>
 
             </div>
             <div>
                 <button id="timsoduongmin" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">4. Tìm số
                     dương nhỏ
                     nhất trong mảng.</button>
-                <span id="kequa4"> </span>
+                <span class="text-2xl " id="kequa4"> </span>
 
             </div>
             <div>
                 <button id="timchancuoi" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">5. Tìm số
                     chẵn cuối
                     cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1.</button>
-                <span id="kequa5"> </span>
+                <span class="text-2xl " id="kequa5"> </span>
 
             </div>
             <div>
@@ -168,7 +173,7 @@
                 <span>/</span>
                 <span><input id="vitri2" class="w-10" type="text">vị trí 2</span>
 
-                <span id="kequa6"> </span>
+                <span class="text-2xl " id="kequa6"> </span>
 
             </div>
 
@@ -176,7 +181,7 @@
                 <button id="tangdan" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">7. Sắp xếp mảng
                     theo
                     thứ tự tăng dần.</button>
-                <span id="kequa7"> </span>
+                <span class="text-2xl " id="kequa7"> </span>
 
             </div>
             <div>
@@ -184,7 +189,7 @@
                     nguyên tố
                     đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về – 1.
                 </button>
-                <span id="kequa8"> </span>
+                <span class="text-2xl " id="kequa8"> </span>
 
             </div>
             <div>
@@ -202,7 +207,7 @@
                 <span class="" id="arrayInputShow2"></span>
                 <button id="songuyen" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
                     Tính</button>
-                <span id="kequa9"> </span>
+                <span class="text-2xl " id="kequa9"> </span>
 
 
 
@@ -212,7 +217,7 @@
                     lượng
                     số
                     dương và số lượng số âm xem số nào nhiều hơn.</button>
-                <span id="kequa10"> </span>
+                <span class="text-2xl " id="kequa10"> </span>
 
             </div>
         </div>
