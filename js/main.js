@@ -6,7 +6,7 @@ let arrayA = [];
 
 const taoMang = () => {
     if (createArraySelect.value === "Mảng có sẵn") {
-        arrayA = [-3, -2, -1, 0, 1, 7, 8, 9, 10, 2, 3, 4, 5, 6]
+        arrayA = [-3, -2, -1, 0, 1, 7, 8, 9, 10, 2, 3, 4, 5, 6, -4]
         // arrayA = [-3, 0, -2, 7]
         document.getElementById("arrayInputShow").innerHTML = `Mảng A =  [${arrayA}] `;
         document.getElementById("arrayInputShow").classList.remove("hidden");
@@ -21,7 +21,7 @@ const taoMang = () => {
 }
 // tạo mảng mới
 function addArray() {
-    const arrayInput = document.getElementById("arrayInput").value;
+    const arrayInput = document.getElementById("arrayInput").value * 1;
     arrayA.push(arrayInput);
     document.getElementById("arrayInput").value = "";
     document.getElementById("arrayInputShow").classList.remove("hidden");
@@ -56,7 +56,7 @@ document.getElementById("demsoduong").onclick = function () {
 document.getElementById("timsonhonhat").onclick = function () {
     let min = arrayA[0];
 
-    for (i = 0; i < arrayA.length; i++) {
+    for (i = 1; i < arrayA.length; i++) {
         if (min > arrayA[i]) {
             min = arrayA[i];
         }

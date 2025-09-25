@@ -131,60 +131,69 @@
             </div>
 
             <hr>
-            <div>
+            <div class="border-b">
                 <button id="tongsoduong" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">1. Tổng
                     các số dương trong mảng.</button>
                 <span class="text-2xl " id="kequa1"> </span>
 
             </div>
-            <div>
+            <div class="border-b">
                 <button id="demsoduong" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">2. Đếm có
                     bao nhiêu
                     số dương trong mảng.</button>
                 <span class="text-2xl " id="kequa2"> </span>
 
             </div>
-            <div>
+            <div class="border-b">
                 <button id="timsonhonhat" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">3. Tìm số
                     nhỏ nhất
                     trong mảng.</button>
                 <span class="text-2xl " id="kequa3"> </span>
 
             </div>
-            <div>
+            <div class="border-b">
                 <button id="timsoduongmin" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">4. Tìm số
                     dương nhỏ
                     nhất trong mảng.</button>
                 <span class="text-2xl " id="kequa4"> </span>
 
             </div>
-            <div>
+            <div class="border-b">
                 <button id="timchancuoi" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">5. Tìm số
                     chẵn cuối
                     cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1.</button>
                 <span class="text-2xl " id="kequa5"> </span>
 
             </div>
-            <div>
-                <button id="doiso" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">6. Đổi chỗ 2 giá
-                    trị
-                    trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).</button>
-                <span><input id="vitri1" class="w-10" type="text">vị trí 1</span>
-                <span>/</span>
-                <span><input id="vitri2" class="w-10" type="text">vị trí 2</span>
+            <div class="flex border-b">
+                <div>
+                    <button id="doiso" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">6. Đổi chỗ 2
+                        giá
+                        trị
+                        trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).</button>
+                </div>
+                <div class="pl-5">
+                    <input id="vitri1" class="w-10" type="text">
+                    <p>vị trí thứ nhất</p>
+                </div>
+
+                <div class="pl-5">
+                    <input id="vitri2" class="w-10" type="text">
+                    <p>vị trí thứ hai</p>
+                </div>
 
                 <span class="text-2xl " id="kequa6"> </span>
 
             </div>
 
-            <div>
+            <div class="border-b">
                 <button id="tangdan" class="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded">7. Sắp xếp mảng
                     theo
                     thứ tự tăng dần.</button>
                 <span class="text-2xl " id="kequa7"> </span>
 
             </div>
-            <div>
+            <div class="border-b">
                 <button id="songuyento" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">8. Tìm số
                     nguyên tố
                     đầu tiên trong mảng. Nếu mảng không có số nguyên tố thì trả về – 1.
@@ -192,27 +201,30 @@
                 <span class="text-2xl " id="kequa8"> </span>
 
             </div>
-            <div>
+            <div class="flex border-b ">
 
-                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">9. Nhập thêm 1
+                <button class=" py-2 px-4 rounded">9. Nhập thêm 1
                     mảng
                     số
                     thực, tìm xem trong mảng có bao nhiêu số nguyên?</button>
-                <input id="arrayInput2" class=" w-20" type="number">
-                <button id="btnAddArray2" type="text"
-                    class="  bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
-                    onclick="addArray2()">Thêm</button>
+                <div class="pl-10  pb-4">
+                    <input id="arrayInput2" class=" w-20" type="number">
+                    <button id="btnAddArray2" type="text"
+                        class="  bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+                        onclick="addArray2()">Thêm</button>
+                    <p>thêm từng số => nhấn thêm</p>
+                    <p id="arrayInputShow2"></p>
+                </div>
 
 
-                <span class="" id="arrayInputShow2"></span>
-                <button id="songuyen" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                <button id="songuyen" class="ml-10 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
                     Tính</button>
                 <span class="text-2xl " id="kequa9"> </span>
 
 
 
             </div>
-            <div>
+            <div class="border-b">
                 <button id="amduong" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">10. So sánh số
                     lượng
                     số
