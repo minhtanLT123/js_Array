@@ -1,10 +1,12 @@
 // tạo mảng có sãn
 let arrayA = [];
-const taoMang = () => {
 
+
+
+const taoMang = () => {
     if (createArraySelect.value === "Mảng có sẵn") {
         arrayA = [-3, -2, -1, 0, 1, 7, 8, 9, 10, 2, 3, 4, 5, 6]
-        // arrayA = [-3, 0, 7]
+        // arrayA = [-3, 0, -2, 7]
         document.getElementById("arrayInputShow").innerHTML = `Mảng A =  [${arrayA}] `;
         document.getElementById("arrayInputShow").classList.remove("hidden");
         document.getElementById("arrayInput").classList.add("hidden");
@@ -16,25 +18,22 @@ const taoMang = () => {
         document.getElementById("arrayInput").classList.remove("hidden");
         document.getElementById("btnAddArray").classList.remove("hidden");
 
-
-
-
     }
-    else {
 
-        arrayA = [];
-    }
 }
+// tạo mảng mới
 function addArray() {
-
+    const arrayInput = document.getElementById("arrayInput").value;
+    arrayA.push(arrayInput);
+    document.getElementById("arrayInput").value = "";
     document.getElementById("arrayInputShow").classList.remove("hidden");
-    document.getElementById("arrayInput").classList.add("hidden");
-    document.getElementById("btnAddArray").classList.add("hidden");
-
+    document.getElementById("arrayInputShow").innerHTML = `Mảng B =  [${arrayA}] `;
 }
+
 
 //1. tổng các số dương trong mảng
 document.getElementById("tongsoduong").onclick = function () {
+
     let tongSoDuong = 0;
 
     for (i = 0; i < arrayA.length; i++) {
@@ -69,26 +68,33 @@ document.getElementById("timsonhonhat").onclick = function () {
 }
 // 4. tìm số dương nhỏ nhất
 document.getElementById("timsoduongmin").onclick = function () {
-    let mind = Infinity;
-
+    let minArray = [];
     for (let i = 0; i < arrayA.length; i++) {
-        if (mind > 0 && arrayA[i] < mind) {
-            mind = arrayA[i];
+        if (arrayA[i] > 0) {
+            minArray.push(arrayA[i]);
         }
 
     }
+    let min = minArray[0];
+    for (i = 1; i < minArray.length; i++) {
+        if (min > minArray[i]) {
+            min = minArray[i];
+        }
+    }
 
 
-
-    document.getElementById("kequa4").innerHTML = mind;
+    document.getElementById("kequa4").innerHTML = min;
 }
 //5. Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1.
 document.getElementById("timchancuoi").onclick = function () {
     let chan = arrayA[0];
 
     for (i = 0; i < arrayA.length; i++) {
-        if (arrayA[i] % 2 === 0) {
+        if (arrayA[i] % 2 === 0 && arrayA[i] !== 0) {
             chan = arrayA[i];
+        }
+        else {
+            document.getElementById("kequa5").innerHTML = `không có số chăn!`
         }
 
 
@@ -101,15 +107,20 @@ document.getElementById("timchancuoi").onclick = function () {
 
 // 6. Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).
 document.getElementById("doiso").onclick = function () {
-    let chan = arrayA[0];
 
-    for (i = 0; i < arrayA.length; i++) {
-        if (arrayA[i] % 2 === 0) {
-            chan = arrayA[i];
-        }
-    }
+    const viTri1 = document.getElementById("vitri1").value * 1;
+    const viTri2 = document.getElementById("vitri2").value * 1;
 
-    document.getElementById("kequa6").innerHTML = chan;
+    let tempA = arrayA[viTri1];
+    arrayA[viTri1] = arrayA[viTri2];
+    arrayA[viTri2] = tempA;
+
+
+
+
+    document.getElementById("kequa6").innerHTML = `=> Mảng sau khi hoán đổi: ${arrayA}`;
+    console.log(viTri1);
+    console.log(viTri2);
 }
 
 //7. Sắp xếp mảng theo thứ tự tăng dần.
@@ -158,14 +169,27 @@ document.getElementById("songuyento").onclick = function () {
 }
 
 //9. Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên?
-// document.getElementById("songuyen").onclick = function () {
+let arrayC = [];
+function addArray2() {
 
-//     for (i = 0; i < arrayA.length - 1; i++) {
+    const arrayInput = document.getElementById("arrayInput2").value;
+    arrayC.push(arrayInput);
+    document.getElementById("arrayInputShow2").innerHTML = ` Mảng C = [${arrayC}]`;
 
+}
 
-//     }
-//     document.getElementById("kequa9").innerHTML = `[${newArrayA}]`;
-// }
+document.getElementById("songuyen").onclick = function () {
+    let dem = 0;
+    let soNguyen = 0;
+    for (i = 0; i < arrayC.length; i++) {
+        if (arrayC[i] % 1 !== 0) {
+            dem += 1;
+        }
+    }
+    soNguyen = arrayC.length - dem;
+    document.getElementById("kequa9").innerHTML = `=> có Tổng só nguyên là: ${soNguyen}  `;
+    console.log(soNguyen);
+}
 
 //10. So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.
 document.getElementById("amduong").onclick = function () {
